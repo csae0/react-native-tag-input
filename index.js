@@ -278,7 +278,7 @@ class TagInput<T> extends React.PureComponent<Props<T>, State> {
                 styles.textInputContainer,
                 { width: this.state.inputWidth },
               ]}>
-                <TextInput
+               {this.state.inputWidth > 0 && <TextInput
                   ref={this.tagInputRef}
                   blurOnSubmit={false}
                   onKeyPress={this.onKeyPress}
@@ -296,7 +296,7 @@ class TagInput<T> extends React.PureComponent<Props<T>, State> {
                   keyboardType="default"
                   underlineColorAndroid="rgba(0,0,0,0)"
                   {...this.props.inputProps}
-                />
+                />}
               </View>
             </View>
           </ScrollView>
