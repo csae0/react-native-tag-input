@@ -404,7 +404,7 @@ class Tag extends React.PureComponent<TagProps> {
           this.props.tagTextStyle,
         ]}>
           {this.props.label}
-          deletable ? &nbsp;&times : '';
+          {deletable ? &nbsp;&times; : ''}
         </Text>
       </TouchableOpacity>
     );
