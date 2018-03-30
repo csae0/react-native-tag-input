@@ -119,6 +119,8 @@ class TagInput<T> extends React.PureComponent<Props<T>, State> {
     onHeightChange: PropTypes.func,
     // $FlowFixMe: identify EdgeInsetsPropType, PointPropType as React PropType
     scrollViewProps: PropTypes.shape(ScrollView.propTypes),
+    deletable: PropTypes.bool
+
   };
   props: Props<T>;
   state: State;
@@ -253,6 +255,7 @@ class TagInput<T> extends React.PureComponent<Props<T>, State> {
         tagContainerStyle={this.props.tagContainerStyle}
         tagTextStyle={this.props.tagTextStyle}
         key={index}
+        deletable={this.props.deletable}
       />
     ));
 
@@ -404,7 +407,7 @@ class Tag extends React.PureComponent<TagProps> {
           this.props.tagTextStyle,
         ]}>
           {this.props.label}
-          {deletable ? &nbsp;&times; : ''}
+          {deletable ? '\u00A0\u00D7' : ''}
         </Text>
       </TouchableOpacity>
     );
