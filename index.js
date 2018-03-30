@@ -371,6 +371,7 @@ class Tag extends React.PureComponent<TagProps> {
     tagTextColor: PropTypes.string.isRequired,
     tagContainerStyle: ViewPropTypes.style,
     tagTextStyle: Text.propTypes.style,
+    deletable: PropTypes.bool
   };
   curPos: ?number = null;
 
@@ -386,6 +387,7 @@ class Tag extends React.PureComponent<TagProps> {
   }
 
   render() {
+    const { deletable = true } = this.props
     return (
       <TouchableOpacity
         onPress={this.onPress}
@@ -402,7 +404,7 @@ class Tag extends React.PureComponent<TagProps> {
           this.props.tagTextStyle,
         ]}>
           {this.props.label}
-          &nbsp;&times;
+          deletable ? &nbsp;&times : '';
         </Text>
       </TouchableOpacity>
     );
