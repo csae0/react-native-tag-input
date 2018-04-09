@@ -224,7 +224,7 @@ class TagInput<T> extends React.PureComponent<Props<T>, State> {
     if (this.state.inputWidth > 0) {
       invariant(this.tagInput, "should be set");
       this.tagInput.focus();
-    )
+    }
   }
 
   removeIndex = (index: number) => {
